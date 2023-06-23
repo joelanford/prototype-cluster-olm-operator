@@ -1,0 +1,14 @@
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: helm-provisioner
+  namespace: openshift-rukpak-system
+spec:
+  dnsNames:
+    - helm-provisioner.openshift-rukpak-system.svc
+    - helm-provisioner.openshift-rukpak-system.svc.cluster.local
+  issuerRef:
+    kind: Issuer
+    name: rukpak-ca-issuer
+  secretName: helm-provisioner-cert

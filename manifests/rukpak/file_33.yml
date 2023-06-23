@@ -1,0 +1,9 @@
+---
+apiVersion: cert-manager.io/v1
+kind: Issuer
+metadata:
+  name: rukpak-ca-issuer
+  namespace: openshift-rukpak-system
+spec:
+  ca:
+    secretName: rukpak-ca

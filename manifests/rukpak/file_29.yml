@@ -1,0 +1,21 @@
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: rukpak-ca
+  namespace: openshift-rukpak-system
+spec:
+  dnsNames:
+    - rukpak.io
+  duration: 2160h
+  isCA: true
+  issuerRef:
+    group: cert-manager.io
+    kind: ClusterIssuer
+    name: rukpak-selfsigned-issuer
+  privateKey:
+    algorithm: ECDSA
+    rotationPolicy: Always
+    size: 256
+  renewBefore: 360h
+  secretName: rukpak-ca

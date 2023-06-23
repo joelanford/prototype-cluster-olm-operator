@@ -1,0 +1,8 @@
+---
+apiVersion: cert-manager.io/v1
+kind: Issuer
+metadata:
+  name: rukpak-selfsigned
+  namespace: openshift-rukpak-system
+spec:
+  selfSigned: {}
